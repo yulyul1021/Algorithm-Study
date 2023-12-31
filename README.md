@@ -1,6 +1,6 @@
 # algorithm_study
 
-아래 스터디를 참고하였습니다.
+아래 스터디를 참고하였습니다.</br>
 https://github.com/ellynhan/challenge100-codingtest-study
 
 ## 규칙
