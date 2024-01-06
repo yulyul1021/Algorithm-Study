@@ -1,0 +1,61 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Main {
+    static int num;
+    static boolean[] state;
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        num = Integer.parseInt(br.readLine());
+        state = new boolean[num];
+        int stu_N;
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+        for (int i = 0; i < num; i++) {
+            state[i] = "1".equals(st.nextToken());
+        }
+        stu_N = Integer.parseInt(br.readLine());
+
+        for (int j = 0; j < stu_N; j++) {
+            StringTokenizer stu_ST = new StringTokenizer(br.readLine());
+            int s = Integer.parseInt(stu_ST.nextToken());
+            int sn = Integer.parseInt(stu_ST.nextToken());
+
+            if (s == 1) { //남
+                men(sn);
+            } else if (s == 2) {
+                women(sn);
+            }
+        }
+
+        for(int i = 1; i <= num; i++){
+            if(state[i - 1])
+                System.out.print("1");
+            else
+                System.out.print("0");
+            if(i % 20 == 0)
+                System.out.println();
+            else
+                System.out.print(" ");
+        }
+    }
+
+    static public void men(int sn) {
+        for (int i = sn - 1; i < num; i += sn) {
+            state[i] = !state[i];
+        }
+    }
+
+    static public void women(int sn) {
+        int j = 0;
+        sn--;
+        while(sn-j >= 0 && sn + j < num){
+            if(state[sn + j] == state[sn - j])
+                state[sn + j] = state[sn - j]=!state[sn + j];
+            else break;
+            j++;
+        }
+    }
+}
