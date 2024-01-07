@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        double x[] = new double[n];
+
+        for(int i=0; i<x.length; i++) {x[i] = sc.nextInt();}
+        
+        double big = big(x);
+        double result = aver(x, big);
+        
+        System.out.print(result);      
+        sc.close();
+    }
+    
+    static double big(double x[]) {
+    	double big=x[0];
+    	for(int i=0; i<x.length; i++) {if(x[i]>big) big=x[i];}
+    	return big;
+    }
+    
+    static double aver(double x[], double big) {
+    	double y[] = new double[x.length]; double sum = 0;
+    	for(int i=0;i<x.length;i++) {y[i] = x[i]/big*100;}
+    	for(int i=0;i<y.length;i++) {sum += y[i];}
+    	return sum/y.length;
+    }
+}

@@ -1,0 +1,24 @@
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int x = sc.nextInt();
+        sc.close();
+        System.out.print(re(x));
+    }
+    
+    static int re(int x) {
+    	int orig = x;
+    	int length = 0;
+    	
+    	do {
+    		int sum = ((x/10) + (x%10))%10;
+    		x = (x%10) * 10 + sum;
+    		length++;
+    	}while(x != orig);
+    	
+    	return length;
+    }
+}
