@@ -5,10 +5,9 @@ class Solution {
         for(int i=0; i<10; i++){
             boolean found = false;
             for(int l=0; l<numbers.length; l++){
-                if(numbers[l] == i)
-                    found = true;
+                if(numbers[l] == i) {found = true;}
             }
-            if(!found){answer += i;}
+            if(!found) {answer += i;}
         }
         
         return answer;
