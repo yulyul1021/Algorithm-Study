@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    int num, max = 0;
+    double avg = 0;
+    scanf("%d", &num);
+    int s[num];
+    
+    for(int i = 0; i < num; i++){
+        scanf(" %d", &s[i]);
+        if(max < s[i]) max = s[i];
+    }
+
+    
+    for(int i = 0; i < num; i++){
+        avg += (double)s[i] / max * 100;
+    }
+    printf("%lf\n", avg / num);
+}
