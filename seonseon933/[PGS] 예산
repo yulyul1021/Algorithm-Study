@@ -1,0 +1,9 @@
+def solution(d, budget):
+    d.sort() # 내림차순으로 하려면 d.sort(reverse = True)
+    answer = 0
+    for i in d:
+        budget -= i
+        if budget < 0:
+            break
+        answer += 1
+    return answer

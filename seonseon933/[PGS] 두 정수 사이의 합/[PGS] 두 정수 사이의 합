@@ -1,0 +1,6 @@
+def solution(a, b):
+    answer = 0
+    if(a > b):
+        a, b = b, a #튜플 언패킹
+    
+    return sum(range(a, b+1))

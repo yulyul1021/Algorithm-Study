@@ -1,0 +1,7 @@
+str_list = ['black', 'brown', 'red', 'orange', 'yellow', 'green', 'blue', 'violet', 'grey', 'white']
+
+a = str(str_list.index(input()))
+b = str(str_list.index(input()))
+c = str(10**str_list.index(input()))
+
+print(int(a+b+c[1:]))
