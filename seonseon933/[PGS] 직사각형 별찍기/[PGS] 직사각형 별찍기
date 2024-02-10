@@ -1,0 +1,3 @@
+a, b = map(int, input().strip().split(' '))
+res = ('*'*a + '\n')*b  #문자열로 만들기
+print(res)

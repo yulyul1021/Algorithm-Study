@@ -1,0 +1,16 @@
+def solution(sizes):
+    h = []
+    w = []
+    
+    for i in range(len(sizes)):
+        h.append(max(sizes[i]))
+        w.append(min(sizes[i]))
+    
+    answer = max(h) * max(w)
+    return answer
+
+"""
+제너레이터 표현식을 이용해 더 간단한 식을 만들 수 있음.
+
+return max(max(i) for i in sizes) * max(min(i) for i in sizes)
+"""
