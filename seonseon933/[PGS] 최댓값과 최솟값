@@ -1,0 +1,5 @@
+def solution(s):
+    x = list(map(int, s.split(" ")))
+    x_min = str(min(x))
+    x_max = str(max(x))
+    return x_min + " " + x_max
