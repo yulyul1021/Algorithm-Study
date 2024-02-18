@@ -1,0 +1,22 @@
+class Solution {
+    public int[] solution(int n, int m) {
+        int max = max(n,m);
+        int min = min(n,m,max);
+        int[] answer = new int[]{max, min};
+        return answer;
+    }
+    
+    public int max(int a, int b) {
+        while (b != 0) {
+            int temp = a % b;
+            a = b;
+            b = temp;
+        }
+        return a;
+    }
+
+    public int min(int a, int b, int max) {
+        return (a * b) / max;
+    }
+}
+
