@@ -17,7 +17,7 @@ class Solution {
       answer = new String();
       answer = min+" "+max;
 
-      
+
       return answer;
     }
 }
