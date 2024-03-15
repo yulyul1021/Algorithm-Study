@@ -1,0 +1,3 @@
+def solution(num):
+    return ["Even", "Odd"][num % 2]
+    # 리스트를 사용한 인덱싱의 축약 표현

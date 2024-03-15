@@ -1,0 +1,10 @@
+def solution(s):
+    answer = []
+    arr = {}
+    for i, c in enumerate(s):
+        if c not in arr:
+            answer.append(-1)
+        else:
+            answer.append(i - arr[c])
+        arr[c] = i
+    return answer
