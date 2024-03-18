@@ -1,0 +1,26 @@
+class Solution {
+	  
+    public String solution(String s) {
+      String answer = "";
+
+      s = s.toLowerCase();
+      s += " a";
+      String[] str = s.split(" ");
+      
+      for(int i=0; i<str.length; i++){
+    	if(str[i].equals(""))
+    		continue;
+        String c = String.valueOf(str[i].charAt(0));  
+        String c2 = c.toUpperCase();
+        str[i]=str[i].replaceFirst(c,c2);
+      }
+
+      answer = new String();
+      for(int i =0 ;i<str.length-2;i++){
+    	  answer += str[i] + " ";
+      }
+      answer += str[str.length-2];
+      
+      return answer;
+    }
+}
